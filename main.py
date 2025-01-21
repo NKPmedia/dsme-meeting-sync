@@ -21,6 +21,10 @@ root = pyrootutils.setup_root(
 )
 
 
+# Print current time
+print("Start")
+print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+
 base_url = os.environ.get('WIKI_URL')
 page_title = "Schedule_Groupmeetings"
 
@@ -72,3 +76,6 @@ events = g_sync.get_calendar_events(g_cal_id)
 g_sync.sync_research_group_meetings(g_cal_id, research_meetings)
 g_sync.sync_student_presentations(g_cal_id, student_presentations)
 pass
+
+print("End")
+print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
